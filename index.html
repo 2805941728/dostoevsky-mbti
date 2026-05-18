@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dtti | 陀思妥耶夫斯基人格测试</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="start-screen" id="startScreen" aria-labelledby="siteTitle">
+        <div class="portrait-wrap">
+          <img
+            class="portrait"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dostoevsky_1872.jpg/500px-Dostoevsky_1872.jpg"
+            alt="陀思妥耶夫斯基肖像"
+          />
+        </div>
+        <p class="kicker">DOSTOEVSKY TYPE TEST INDEX</p>
+        <h1 id="siteTitle">Dtti</h1>
+        <h2>陀思妥耶夫斯基专项人格测试</h2>
+        <p class="intro">
+          以 MBTI 四维为骨架，以《罪与罚》《地下室手记》《白痴》《卡拉马佐夫兄弟》的精神处境为题库。
+        </p>
+        <button class="primary-button" id="startButton">开始精神档案登记</button>
+        <button class="ghost-button" id="caseButton">查看病例类型</button>
+      </section>
+
+      <section class="test-screen hidden" id="testScreen" aria-live="polite">
+        <header class="test-header">
+          <div>
+            <span class="red-dot"></span>
+            <span>Dtti 俄国精神诊断系统</span>
+          </div>
+          <span id="counter">1 / 28</span>
+        </header>
+
+        <div class="progress" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <article class="question-card">
+          <p class="source" id="sourceLabel"></p>
+          <h2 id="questionText"></h2>
+          <div class="answers" id="answers"></div>
+        </article>
+
+        <footer class="test-footer">
+          <button class="back-button" id="backButton">退回上一念头</button>
+          <p id="quoteLine">每一次选择，都是一次自供。</p>
+        </footer>
+      </section>
+
+      <section class="result-screen hidden" id="resultScreen" aria-labelledby="resultTitle">
+        <header class="result-header">
+          <p class="kicker">CASE FILE CLOSED</p>
+          <h1 id="resultTitle"></h1>
+          <p id="resultSubtitle"></p>
+        </header>
+
+        <div class="result-grid">
+          <article class="verdict">
+            <h2>诊断书</h2>
+            <p id="resultDescription"></p>
+            <div class="traits" id="traitTags"></div>
+          </article>
+
+          <article class="dimension-panel">
+            <h2>MBTI 维度记录</h2>
+            <div id="bars"></div>
+          </article>
+        </div>
+
+        <article class="reading-panel">
+          <h2>推荐阅读入口</h2>
+          <p id="readingPath"></p>
+        </article>
+
+        <div class="actions">
+          <button class="primary-button" id="restartButton">重新审问自己</button>
+          <button class="ghost-button" id="shareButton">生成一句判词</button>
+        </div>
+        <p class="share-line" id="shareLine"></p>
+      </section>
+
+      <aside class="case-drawer hidden" id="caseDrawer" aria-label="病例类型">
+        <button class="drawer-close" id="closeCases" aria-label="关闭病例库">x</button>
+        <h2>已知病例库</h2>
+        <div class="case-list" id="caseList"></div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
